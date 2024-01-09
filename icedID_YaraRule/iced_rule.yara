@@ -2,9 +2,14 @@ rule iced_family_was_detected {
     meta:
         score = 90
         author = "0x0d4y"
+        date = "2023-01-09"
         description = "This rule detects code patterns from the RC4 algorithm implementation, hardware information collection, and URI and String construction observed in the IcedID malware family."
         reference = "https://0x0d4y.blog/icedid-technical-analysis/"
-        rule_uuid = "6d51471c-6433-467b-ad37-603949d15522"
+        yarahub_uuid = "6d51471c-6433-467b-ad37-603949d15522"
+        yarahub_license = "CC0 1.0"
+        yarahub_rule_matching_tlp = "TLP:WHITE"
+        yarahub_rule_sharing_tlp = "TLP:WHITE"
+        yarahub_reference_md5 = "22631afc7d9706f566995833748de97f"
     strings:
     $hardware_info_collect_code_pattern = { 
         B8 00 00 00 40 0F A2 89 06 0F B6 44 24 16 89 5E 04 89 4E 08 89 56 0C FF 74 24 28 50 0F B6 44 24 1F 50 0F B6 44 24 24 50 0F B6 44 24 29 50 0F B6 44 24 2E 50 0F B6 44 24 33 50 68 ?? ?? 40 00

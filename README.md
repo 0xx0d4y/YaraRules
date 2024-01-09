@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://www.malwarebytes.com/wp-content/uploads/sites/2/2017/09/yaralogo.jpg" width="700" height="400">
+  <img src="https://www.malwarebytes.com/wp-content/uploads/sites/2/2017/09/yaralogo.jpg" width="500" height="200">
 </p>
 
 # 0x0d4y's Yara Rules

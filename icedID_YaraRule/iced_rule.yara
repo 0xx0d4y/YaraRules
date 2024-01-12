@@ -1,15 +1,15 @@
 rule icedid_family_was_detected {
   meta:
       author = "0x0d4y"
-      description = "This rule detects samples from the IcedID family, through code reuse."
+      description = "This rule detects samples from the IcedID family unpacked in memory, identifying code reuse of key functions."
       date = "2024-01-09"
       score = 90
       reference = "https://0x0d4y.blog/icedid-technical-analysis/"
-      yarahub_reference_md5 = "5692c5708c71d0916ca48662a7ea9caf"
-      yarahub_uuid = "53918024-6212-4ad0-8870-7f83b3b1eaf3"
-      yarahub_license = "CC BY 4.0"
-      yarahub_rule_matching_tlp = "TLP:WHITE"
-      yarahub_rule_sharing_tlp = "TLP:WHITE"
+      sample_reference_md5 = "5692c5708c71d0916ca48662a7ea9caf"
+      uuid = "53918024-6212-4ad0-8870-7f83b3b1eaf3"
+      license = "CC BY 4.0"
+      rule_matching_tlp = "TLP:WHITE"
+      rule_sharing_tlp = "TLP:WHITE"
       malpedia_family = "win.icedid"
     strings:
     $hardware_info_collect_code_pattern = { 

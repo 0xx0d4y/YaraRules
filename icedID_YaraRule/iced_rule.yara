@@ -3,7 +3,8 @@ rule icedid_family_was_detected {
       author = "0x0d4y"
       description = "This rule detects samples from the IcedID family, through code reuse."
       date = "2024-01-09"
-      yarahub_reference_link = "https://0x0d4y.blog/icedid-technical-analysis/"
+      score = 90
+      reference = "https://0x0d4y.blog/icedid-technical-analysis/"
       yarahub_reference_md5 = "5692c5708c71d0916ca48662a7ea9caf"
       yarahub_uuid = "53918024-6212-4ad0-8870-7f83b3b1eaf3"
       yarahub_license = "CC BY 4.0"
@@ -30,8 +31,9 @@ rule icedid_family_was_detected {
     $related_string8 = "%0.2X%0.2X%0.2X%0.2X%0.2X%0.2X%0.8X"
     $related_string9 = "%0.2X%0.8X%0.8X"
     condition:
+        
         ($hardware_info_collect_code_pattern or
         $ksa_prga_pattern or
-        $xor_operation_pattern) and
+        $xor_operation_pattern) or
         8 of ($related_string*)
 }

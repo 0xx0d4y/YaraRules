@@ -31,7 +31,7 @@ rule icedid_family_was_detected {
     $related_string8 = "%0.2X%0.2X%0.2X%0.2X%0.2X%0.2X%0.8X"
     $related_string9 = "%0.2X%0.8X%0.8X"
     condition:
-        
+        uint16(0) == 0x5a4d and
         ($hardware_info_collect_code_pattern or
         $ksa_prga_pattern or
         $xor_operation_pattern) or

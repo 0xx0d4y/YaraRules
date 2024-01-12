@@ -1,15 +1,15 @@
-rule iced_family_was_detected {
-    meta:
-        score = 90
-        author = "0x0d4y"
-        date = "2023-01-09"
-        description = "This rule detects code patterns from the RC4 algorithm implementation, hardware information collection, and URI and String construction observed in the IcedID malware family."
-        reference = "https://0x0d4y.blog/icedid-technical-analysis/"
-        yarahub_uuid = "6d51471c-6433-467b-ad37-603949d15522"
-        yarahub_license = "CC0 1.0"
-        yarahub_rule_matching_tlp = "TLP:WHITE"
-        yarahub_rule_sharing_tlp = "TLP:WHITE"
-        yarahub_reference_md5 = "22631afc7d9706f566995833748de97f"
+rule icedid_family_was_detected {
+  meta:
+      author = "0x0d4y"
+      description = "This rule detects samples from the IcedID family, through code reuse."
+      date = "2024-01-09"
+      yarahub_reference_link = "https://0x0d4y.blog/icedid-technical-analysis/"
+      yarahub_reference_md5 = "5692c5708c71d0916ca48662a7ea9caf"
+      yarahub_uuid = "53918024-6212-4ad0-8870-7f83b3b1eaf3"
+      yarahub_license = "CC BY 4.0"
+      yarahub_rule_matching_tlp = "TLP:WHITE"
+      yarahub_rule_sharing_tlp = "TLP:WHITE"
+      malpedia_family = "win.icedid"
     strings:
     $hardware_info_collect_code_pattern = { 
         B8 00 00 00 40 0F A2 89 06 0F B6 44 24 16 89 5E 04 89 4E 08 89 56 0C FF 74 24 28 50 0F B6 44 24 1F 50 0F B6 44 24 24 50 0F B6 44 24 29 50 0F B6 44 24 2E 50 0F B6 44 24 33 50 68 ?? ?? 40 00
@@ -30,8 +30,8 @@ rule iced_family_was_detected {
     $related_string8 = "%0.2X%0.2X%0.2X%0.2X%0.2X%0.2X%0.8X"
     $related_string9 = "%0.2X%0.8X%0.8X"
     condition:
-        $hardware_info_collect_code_pattern or
+        ($hardware_info_collect_code_pattern or
         $ksa_prga_pattern or
-        $xor_operation_pattern or
+        $xor_operation_pattern) and
         8 of ($related_string*)
 }

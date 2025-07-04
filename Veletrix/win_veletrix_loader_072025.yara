@@ -13,7 +13,7 @@ rule win_veletrix_loader_072025 {
       malware_family = "win.veletrix"
 
     strings:
-    $decryption_shellcode_algorithm = { 8B 57 08 48 8B C8 41 FF D5 E8 ?? ?? ?? ?? 48 8B 4F 08 33 D2 48 FF C1 48 98 48 F7 F1 89 57 04 66 0F 1F 84 00 00 00 00 00 48 63 C3 F0 80 34 30 6F FF C3 81 FB 73 05 00 00 72 ?? 8B 47 04 4C 8B C6 48 03 47 10 BA 74 05 00 00 4C 2B C0 [0-16] 41 0F B6 0C 00 88 08 }
+    $decryption_shellcode_algorithm = { 8B 57 08 48 8B C8 41 FF D5 E8 ?? ?? ?? ?? 48 8B 4F 08 33 D2 48 FF C1 48 98 48 F7 F1 89 57 04 66 0F 1F 84 00 00 00 00 00 48 63 C3 F0 80 34 30 ?? FF C3 81 FB 73 05 00 00 72 ?? 8B 47 04 4C 8B C6 48 03 47 10 BA 74 05 00 00 4C 2B C0 [0-16] 41 0F B6 0C 00 88 08 }
 
     condition:
         uint16(0) == 0x5a4d and

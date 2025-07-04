@@ -13,7 +13,7 @@ rule win_veletrix_shellcode_072025 {
         malware_family = "win.veletrix"
 
     strings:
-        $decryption_2ndstage_algorithm = { 45 33 C0 85 C0 74 ?? 41 8D 0C 30 45 03 C6 80 34 39 99 44 3B C0 72 ?? 03 F0 8B D6 48 03 D7 }
+        $decryption_2ndstage_algorithm = { 45 33 C0 85 C0 74 ?? 41 8D 0C 30 45 03 C6 80 34 39 ?? 44 3B C0 72 ?? 03 F0 8B D6 48 03 D7 }
         $ror13_alg = { 0F BE 01 C1 CA 0D 80 39 61 7C 03 83 C2 E0 03 D0 48 FF C1 49 83 EA 01 75 ?? }
 
     condition:

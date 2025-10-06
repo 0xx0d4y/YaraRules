@@ -17,5 +17,6 @@ rule win_publoader_shellcode_102025 {
       $custom_decoding_algorithm = { 8B 45 ?? 03 45 ?? 0F BE 08 8B 45 ?? 83 C0 ?? 33 D2 BE ?? ?? ?? ?? F7 F6 0F BE 54 15 ?? 33 CA 8B 45 ?? 03 45 ?? 88 08 }
 
   condition:
-      uint16(0) == 0x5A4D and $ror13 and $custom_decoding_algorithm
+      $ror13 and $custom_decoding_algorithm
 }
+

@@ -22,7 +22,8 @@ rule win_claimloader_102025 {
       $decrypt_str_api = { 0F 28 0D ?? ?? ?? ?? 33 C0 85 D2 74 42 83 FA 20 72 30 56 8B F2 83 E6 E0 0F 1F 84 00 00 00 00 00 0F 10 04 01 66 0F EF C1 0F 11 04 01 0F 10 44 01 10 66 0F EF C1 0F 11 44 01 10 83 C0 20 3B C6 72 DF 5E 3B C2 73 09 80 34 08 ?? 40 3B C2 72 F7 C3 }
 
   condition:
-      uint16(0) == 0x5A4D and ( 3 of ($s*) or $decrypt_str_api )
+      uint16(0) == 0x5A4D and ( 3 of ($s*) and $decrypt_str_api )
 }
+
 
 
